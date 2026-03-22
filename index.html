@@ -39,14 +39,16 @@ body{font-family:'Libre Franklin',sans-serif;background:var(--bg);color:var(--te
 #main-home{align-items:center;min-height:100vh;padding:48px 20px 40px}
 .mh-title{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:4px;text-align:center}
 .mh-sub{font-size:15px;color:var(--text2);margin-bottom:36px;text-align:center}
-.mh-games{width:100%;max-width:520px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px}
-.mh-card{display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;padding:20px 12px;border-radius:20px;cursor:pointer;transition:background .15s,border-color .15s,transform .12s,box-shadow .15s;text-align:center;background:#FFF;border:1.5px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.mh-games{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:48px}
+.mh-card{display:flex;flex-direction:column;align-items:center;justify-content:center;width:260px;height:260px;border-radius:20px;cursor:pointer;transition:background .15s,border-color .15s,transform .12s,box-shadow .15s;text-align:center;background:#FFF;border:1.5px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04)}
 .mh-card:hover{background:#FAFAFA;border-color:#CCC;transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.08)}
 .mh-card:active{transform:translateY(0);box-shadow:0 2px 8px rgba(0,0,0,.04)}
 .mh-card.disabled{opacity:.4;cursor:default;pointer-events:none}
-.mh-card-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#FFF;margin-bottom:12px;letter-spacing:.5px}
-.mh-card-name{font-size:15px;font-weight:700;margin-bottom:3px}
-.mh-card-desc{font-size:11px;color:var(--text2);font-weight:400;line-height:1.4}
+.mh-card-icon{width:52px;height:52px;min-width:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#FFF;margin-bottom:12px;letter-spacing:.5px}
+.mh-card-icon svg{width:24px;height:24px}
+.mh-card-text{display:flex;flex-direction:column;align-items:center}
+.mh-card-name{font-size:17px;font-weight:700;margin-bottom:3px}
+.mh-card-desc{font-size:12px;color:var(--text2);font-weight:400;line-height:1.4}
 .mh-card-tag{font-size:10px;font-weight:600;color:var(--text2);background:#F0F0F0;padding:3px 10px;border-radius:6px;margin-top:8px}
 .mh-divider{width:100%;max-width:660px;height:1px;background:var(--border);margin-bottom:32px}
 
@@ -261,9 +263,9 @@ body{font-family:'Libre Franklin',sans-serif;background:var(--bg);color:var(--te
 .cross-clue.active{background:var(--accent-light);border-radius:4px}
 .cross-clue-num{font-weight:700;margin-right:4px}
 
-@media(max-width:660px){.mh-games{max-width:400px;gap:12px}.mh-card{padding:16px 10px;border-radius:16px}.mh-card-icon{width:44px;height:44px}.mh-card-name{font-size:13px}.mh-card-desc{font-size:10px}.ach-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:660px){.mh-games{max-width:280px}.mh-card{padding:20px 14px}.mh-card-icon{width:56px;height:56px;min-width:56px}.mh-card-name{font-size:18px}.mh-card-desc{font-size:13px}.ach-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:520px){.mh-title{font-size:28px}.tile{font-size:11px;height:64px;padding:4px 3px}.game-btn{padding:10px 18px;font-size:14px}.go-btn{padding:12px 32px;font-size:15px;min-width:200px}.ach-grid{grid-template-columns:repeat(3,1fr);gap:8px}}
-@media(max-width:380px){.tile{font-size:10px;height:58px}.tile-grid{gap:6px}.mh-games{gap:8px}.mh-card{padding:12px 8px;border-radius:14px}.mh-card-icon{width:38px;height:38px;margin-bottom:8px}.mh-card-name{font-size:12px}.mh-card-desc{display:none}.ach-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:380px){.tile{font-size:10px;height:58px}.tile-grid{gap:6px}.mh-games{gap:10px;max-width:240px}.mh-card{padding:16px 12px;border-radius:16px}.mh-card-icon{width:48px;height:48px;min-width:48px;margin-bottom:12px}.mh-card-name{font-size:16px}.mh-card-desc{font-size:12px}.ach-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -274,18 +276,18 @@ body{font-family:'Libre Franklin',sans-serif;background:var(--bg);color:var(--te
   <div class="mh-games">
     <div class="mh-card" onclick="showConnHome()">
       <div class="mh-card-icon" style="background:linear-gradient(135deg,#7B68AE,#5A4A8A)"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="2" width="9" height="9" rx="2" fill="#F9DF6D"/><rect x="13" y="2" width="9" height="9" rx="2" fill="#A0C35A"/><rect x="2" y="13" width="9" height="9" rx="2" fill="#B0C4EF"/><rect x="13" y="13" width="9" height="9" rx="2" fill="#BA81C5"/></svg></div>
-      <div class="mh-card-name">Connections</div>
-      <div class="mh-card-desc">Group four related IB terms</div>
+      <div class="mh-card-text"><div class="mh-card-name">Connections</div>
+      <div class="mh-card-desc">Group four related IB terms</div></div>
     </div>
     <div class="mh-card" onclick="showCrossHome()">
       <div class="mh-card-icon" style="background:linear-gradient(135deg,#6B8E5A,#4A6B3A)"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="2" width="5" height="5" fill="#FFF"/><rect x="9" y="2" width="5" height="5" fill="#FFF"/><rect x="16" y="2" width="5" height="5" fill="#FFF"/><rect x="2" y="9" width="5" height="5" fill="#FFF"/><rect x="16" y="9" width="5" height="5" fill="#FFF"/><rect x="2" y="16" width="5" height="5" fill="#FFF"/><rect x="9" y="16" width="5" height="5" fill="#FFF"/><rect x="16" y="16" width="5" height="5" fill="#FFF"/></svg></div>
-      <div class="mh-card-name">Crossword</div>
-      <div class="mh-card-desc">Fill the grid with answers</div>
+      <div class="mh-card-text"><div class="mh-card-name">Crossword</div>
+      <div class="mh-card-desc">Fill the grid with answers</div></div>
     </div>
     <div class="mh-card" onclick="showHlHome()">
       <div class="mh-card-icon" style="background:linear-gradient(135deg,#E8734A,#C45A32)"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M7 14l5-10 5 10" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="5" y1="18" x2="19" y2="18" stroke="#FFF" stroke-width="2" stroke-linecap="round"/></svg></div>
-      <div class="mh-card-name">This or That</div>
-      <div class="mh-card-desc">Pick the right answer</div>
+      <div class="mh-card-text"><div class="mh-card-name">This or That</div>
+      <div class="mh-card-desc">Pick the right answer</div></div>
     </div>
   </div>
   <div class="mh-divider"></div>
